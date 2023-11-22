@@ -11,6 +11,10 @@
 #error "missing counter"
 #endif
 
+#if !DT_NODE_HAS_STATUS(TIMER, okay)
+#error "missing counter"
+#endif
+
 #define DEV_OUT DT_NODELABEL(gpioa)
 #define PIN_OUT 0
 
@@ -48,8 +52,8 @@ void rtc_main(void)
 
     const struct counter_config_info *config =
 			(const struct counter_config_info *)dev_count->config;
-    int async_pre = 0x1F;
-    int sync_pre = 0x0137;
+    int async_pre = 0x07;
+    int sync_pre = 0x0007;
     int usec = 1000;
 
 
