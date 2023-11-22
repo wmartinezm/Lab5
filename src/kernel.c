@@ -17,6 +17,9 @@ void kernel_main(void)
     while (1) {
         gpio_pin_toggle(dev_out, PIN_OUT);
 		k_timer_start(&t, K_MSEC(1), K_NO_WAIT);
-		k_timer_status_sync(&t);
+        // k_busy_wait(1000);
+        // k_busy_wait(1500);
+        k_busy_wait(2000);
+		// k_timer_status_sync(&t);
     }
 }

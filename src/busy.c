@@ -14,6 +14,8 @@ void busy_main(void)
 
     while (1) {
         gpio_pin_toggle(dev_out, PIN_OUT);
-        k_busy_wait(1000);
+        // k_busy_wait(1000);
+        // k_busy_wait(1500);
+        k_busy_wait(2000);
     }
 }
