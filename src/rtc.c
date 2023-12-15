@@ -25,6 +25,9 @@ static void alarm_interrupt(const struct device *d,
                      void *user_data)
 {
     gpio_pin_toggle(dev_gpio, PIN_OUT);
+	// k_busy_wait(1000);
+	// k_busy_wait(1500);
+	// k_busy_wait(2000);
 	int err = counter_set_channel_alarm(dev_count, 0, user_data);
 	if (err != 0) {
 		printk("Alarm could not be set\n");
